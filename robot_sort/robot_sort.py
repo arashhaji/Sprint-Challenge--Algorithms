@@ -93,12 +93,72 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+        self.set_light_on() 
+        self.swap_item() 
+        while self.light_is_on(): 
+            self.set_light_off() 
+            while self.can_move_right(): 
+                self.move_right()
+                if self.compare_item() == 1: 
+                    self.set_light_on()
+                elif self.compare_item() == -1: 
+                    self.swap_item() 
+            while self.can_move_left():
+                if self.compare_item() == 1:
+                    self.swap_item()
+                elif self.compare_item() == -1: 
+                    self.set_light_on() 
+                self.move_left() 
+        self.swap_item() 
 
+'''
+Using a bubble sort to figure out solution 
+Turning the light on 
+swapping none for initial value
+while the light is on do the following
+Turn the light off 
+While the robot is capable of moving right
+move right one space
+compare item if the returned value is 1 move to line 103 else move to line 104
+turn light on and move to line 106
+if value returned is -1 move to line 105 otherwise move to line 106
+swap the item at the current position
+while the robot can move left
+compare the item at the current position. if the value returned is 1 move to line 108 else move to line 109
+swap the item at the current position
+compare the item at the current postion. if the value returned is -1 move to line 110 else move to line 11
+set the light to on
+move left one space and repeat loop on line 98
+swap the item at current position when the light is turned of and loop on 98 is finished
+
+'''
+
+'''
+You may use any pre-defined robot methods.
+You may NOT modify any pre-defined robot methods.
+You may use logical operators. (`if`, `and`, `or`, `not`, etc.)
+You may use comparison operators. (`>`, `>=`, `<`, `<=`, `==`, `is`, etc.)
+You may use iterators. (`while`, `for`, `break`, `continue`)
+You may NOT store any variables. (`=`)
+You may NOT access any instance variables directly. (`self._anything`)
+You may NOT use any Python libraries or class methods. (`sorted()`, etc.)
+You may define robot helper methods, as long as they follow all the rules.
+'''
+'''
+Make sure you understand the problem and all of the rules! A solution that breaks the rules will not receive full credit.
+
+If you're unsure if an operator or method is allowed, ask.
+
+Lay out some numbered cards in a line and try sorting them as if you were the robot.
+
+Come up with a plan and write out your algorithm before coding. If your plan is sound but you don't reach a working implementation in three hours, you may receive partial credit.
+
+There is no efficiency requirement but you may lose points for an unreasonably slow solution. Tests should run in far less than 1 second.
+
+We discussed a sorting method this week that might be useful. Which one? 
+
+The robot has exactly one bit of memory: its light. Why is this important?
+'''
 
 if __name__ == "__main__":
     # Test our your implementation from the command line

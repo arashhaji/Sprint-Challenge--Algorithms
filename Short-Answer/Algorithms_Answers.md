@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a) this code block increases in a linear fashion also increases `n` ------> `O(n)`
+a) `O(n)` this code block increases in a linear fashion also increases `n` 
 
 
-b) `J` affects the inner loop of code block and the doubling of `n`  this would be equal to `log n`, the outer loop also increases in a linear fashion in regards to `n` so the two combined ----> `0(n*log n)`
+b)`O(log n)` - the code is using one while loop. As the size of the input increases it will increase at a slow rate since only one loop is present.
 
 
-c) `recursive` function until it hits `0`, value of bunnies. -------> `O(n)`
+c) `O(n)` - the code is performing one recursive function. As the input increases it will always grow at the same rate.
 
 ## Exercise II
 
@@ -17,7 +17,7 @@ Suppose that you have an n-story building and plenty of eggs. Suppose also that 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
 
 # Binary Search Tree 
-# Time complexity is O(log(n)) reducing the amount of time because we are not looping through each of them 
+# Time complexity is O(log n) reducing the amount of time because we are not looping through each of them 
 
 1. egg breaks at first floor 
 2. drop egg at floor 1
